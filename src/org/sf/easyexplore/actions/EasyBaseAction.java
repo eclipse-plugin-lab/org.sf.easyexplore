@@ -23,31 +23,29 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 import org.sf.easyexplore.EasyExplorePlugin;
 
-public  abstract  class   EasyBaseAction     implements IObjectActionDelegate,
-		IWorkbenchWindowActionDelegate   {
+public abstract class EasyBaseAction implements IObjectActionDelegate,
+		IWorkbenchWindowActionDelegate {
 
 	protected Object selected = null;
 
-	protected Class  selectedClass = null;
+	protected Class selectedClass = null;
 
 	public void run(IAction action) {
-	 
-	 	runAction(action);
-	}
 
- 
+		runAction(action);
+	}
 
 	public void setActivePart(IAction action, IWorkbenchPart workbenchpart) {
 
 	}
 
- 	public abstract void runAction(IAction action);
+	public abstract void runAction(IAction action);
 
 	// if the selection is a file ,then return the file ,if not return the file
 	// in actived editor ,or null
 
 	public File getSelectedFile() {
- 
+
 		File file = null;
 		if (selected instanceof IResource) {
 			file = new File(((IResource) selected).getLocation().toOSString());
@@ -56,8 +54,7 @@ public  abstract  class   EasyBaseAction     implements IObjectActionDelegate,
 		}
 		if ("unknown".equals(selected) || null == selected) {
 			IFile activedEditorFile = getActiveEditorFile();
-			
-			
+
 			if (activedEditorFile != null) {
 				file = activedEditorFile.getLocation().toFile();
 
@@ -85,7 +82,7 @@ public  abstract  class   EasyBaseAction     implements IObjectActionDelegate,
 		}
 		return file;
 	}
-	
+
 	/**
 	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
 	 */
@@ -137,7 +134,7 @@ public  abstract  class   EasyBaseAction     implements IObjectActionDelegate,
 	}
 
 	public void init(IWorkbenchWindow arg0) {
-		 
-	}	 
+
+	}
 
 }

@@ -7,9 +7,9 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.sf.easyexplore.EasyExplorePlugin;
 
 /**
- * @author Celinio Fernandes Preferences class for the commands executed by the
- *         Easy plug-in
+ * @author Celinio Fernandes
  * 
+ *         Preferences class for the commands executed by the Easy plug-in
  */
 
 public class EasyExplorePreferencePage extends FieldEditorPreferencePage
